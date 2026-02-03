@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Harsh Vardhan Singh | Portfolio</title>
+
+<style>
+/* ================== GLOBAL ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+    transition: 0.3s;
+}
+
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+/* ================== HEADER ================== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #1f1f1f;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #00ffcc;
+}
+
+.toggle {
+    background: #00ffcc;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ================== SECTIONS ================== */
+section {
+    padding: 70px 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* ================== HERO ================== */
+.hero {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero h2 {
+    font-size: 42px;
+}
+
+.hero span {
+    color: #007bff;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+/* ================== ABOUT ================== */
+.about p {
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+/* ================== SKILLS ================== */
+.skill-box {
+    margin-bottom: 15px;
+}
+
+.skill-box span {
+    font-weight: bold;
+}
+
+.bar {
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    width: 0;
+    background: #007bff;
+    transition: 1s;
+}
+
+/* ================== PROJECTS ================== */
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #eaeaea;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body.dark .project {
+    background: #1f1f1f;
+}
+
+/* ================== TIMELINE ================== */
+.timeline {
+    border-left: 3px solid #007bff;
+    padding-left: 20px;
+}
+
+.event {
+    margin-bottom: 20px;
+}
+
+/* ================== CONTACT ================== */
+form {
+    max-width: 500px;
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+button.submit {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#error {
+    margin-top: 10px;
+}
+
+/* ================== FOOTER ================== */
+footer {
+    background: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ================== ANIMATION ================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Harsh</h1>
+    <nav>
+        <ul>
+            <li><a href="#home" class="nav">Home</a></li>
+            <li><a href="#about" class="nav">About</a></li>
+            <li><a href="#skills" class="nav">Skills</a></li>
+            <li><a href="#projects" class="nav">Projects</a></li>
+            <li><a href="#journey" class="nav">Journey</a></li>
+            <li><a href="#contact" class="nav">Contact</a></li>
+        </ul>
+    </nav>
+    <button class="toggle" onclick="toggleMode()">Dark</button>
+</header>
+
+<section id="home" class="hero reveal">
+    <h2>Hello, I'm <span>Harsh Vardhan Singh</span></h2>
+    <p>CSE Student | ML Enthusiast | Frontend Developer</p>
+</section>
+
+<section id="about" class="about reveal">
+    <h2>About Me</h2>
+    <p>
+        I am a Computer Science Engineering student focused on building scalable,
+        efficient, and user-friendly applications. I enjoy working with machine
+        learning models, system design, and modern web technologies.
+    </p>
+</section>
+
+<section id="skills" class="reveal">
+    <h2>Skills</h2>
+
+    <div class="skill-box">
+        <span>HTML</span>
+        <div class="bar"><div class="fill" data-width="90%"></div></div>
+    </div>
+
+    <div class="skill-box">
+        <span>CSS</span>
+        <div class="bar"><div class="fill" data-width="85%"></div></div>
+    </div>
+
+    <div class="skill-box">
+        <span>JavaScript</span>
+        <div class="bar"><div class="fill" data-width="80%"></div></div>
+    </div>
+
+    <div class="skill-box">
+        <span>Machine Learning</span>
+        <div class="bar"><div class="fill" data-width="75%"></div></div>
+    </div>
+</section>
+
+<section id="projects" class="reveal">
+    <h2>Projects</h2>
+
+    <div class="filters">
+        <button onclick="filterProjects('all')">All</button>
+        <button onclick="filterProjects('web')">Web</button>
+        <button onclick="filterProjects('ml')">ML</button>
+    </div>
+
+    <div class="projects">
+        <div class="project web">
+            <h3>Portfolio Website</h3>
+            <p>Responsive portfolio using HTML, CSS & JS.</p>
+        </div>
+
+        <div class="project ml">
+            <h3>Volatility Prediction</h3>
+            <p>CNN-based financial time series project.</p>
+        </div>
+
+        <div class="project web">
+            <h3>Cloud Wrapper</h3>
+            <p>Wrapper over AWS services similar to Vercel.</p>
+        </div>
+    </div>
+</section>
+
+<section id="journey" class="reveal">
+    <h2>Academic Journey</h2>
+    <div class="timeline">
+        <div class="event">
+            <h4>2023 – Present</h4>
+            <p>B.Tech CSE, Delhi University</p>
+        </div>
+        <div class="event">
+            <h4>2024</h4>
+            <p>Machine Learning & Deep Learning Projects</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="reveal">
+    <h2>Contact Me</h2>
+    <form id="form">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <textarea id="msg" placeholder="Message"></textarea>
+        <button class="submit">Send</button>
+        <p id="error"></p>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Harsh Vardhan Singh</p>
+</footer>
+
+<script>
+/* ===== DARK MODE ===== */
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+
+/* ===== SKILL ANIMATION ===== */
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".fill").forEach(bar => {
+        if (bar.getBoundingClientRect().top < window.innerHeight) {
+            bar.style.width = bar.dataset.width;
+        }
+    });
+});
+
+/* ===== PROJECT FILTER ===== */
+function filterProjects(type) {
+    document.querySelectorAll(".project").forEach(p => {
+        p.style.display = (type === "all" || p.classList.contains(type)) ? "block" : "none";
+    });
+}
+
+/* ===== FORM VALIDATION ===== */
+document.getElementById("form").addEventListener("submit", e => {
+    e.preventDefault();
+    let error = document.getElementById("error");
+    if (name.value === "" || email.value === "" || msg.value.length < 10) {
+        error.style.color = "red";
+        error.textContent = "Please fill all fields correctly";
+    } else {
+        error.style.color = "green";
+        error.textContent = "Message sent successfully!";
+        e.target.reset();
+    }
+});
+
+/* ===== SCROLL REVEAL ===== */
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".reveal").forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
